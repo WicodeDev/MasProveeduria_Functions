@@ -1,0 +1,18 @@
+{
+  "name": "masp-backend",
+  "version": "0.4.0",
+  "description": "Backend for MASP App",
+  "main": "index.ts",
+  "author": "Alexis Prado",
+  "license": "MIT",
+  "scripts": {
+    "deps": "cd functions && yarn",
+    "deploy:dev": "cd functions && firebase use default && yarn build && cd .. && firebase deploy --only functions --token $FIREBASE_TOKEN",
+    "deploy:uat": "cd functions && firebase use uat && yarn build && cd .. && firebase deploy --only functions --token $FIREBASE_TOKEN",
+    "deploy:prod": "cd functions && firebase use prod && yarn build && cd .. && firebase deploy --only functions --token $FIREBASE_TOKEN",
+    "deploy": "cd functions && yarn build && cd .. && firebase deploy --only functions",
+    "dev": "cd functions && yarn build && cd .. && firebase serve --only functions",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix"
+  }
+}

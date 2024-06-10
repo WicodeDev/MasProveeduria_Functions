@@ -1,0 +1,70 @@
+{
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "_moduleAliases": {
+    "@common": "lib/common",
+    "@config": "lib/config",
+    "@controllers": "lib/controllers",
+    "@data": "lib/data",
+    "@middlewares": "lib/middlewares",
+    "@models": "lib/models",
+    "@routes": "lib/routes",
+    "@schemas": "lib/schemas",
+    "@services": "lib/services",
+    "@swagger": "lib/swagger",
+    "@types": "lib/types",
+    "@utils": "lib/utils"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "chai": "^5.1.1",
+    "chai-http": "^4.4.0",
+    "class-validator": "^0.14.1",
+    "cookie-parser": "^1.4.6",
+    "exceljs": "^4.4.0",
+    "express": "^4.19.2",
+    "express-joi-validator": "^2.0.1",
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1",
+    "fireorm": "^0.23.3",
+    "http-status-codes": "^2.3.0",
+    "joi": "^17.13.1",
+    "jsonwebtoken": "^9.0.2",
+    "mocha": "^10.4.0",
+    "momento": "^0.2.0",
+    "morgan": "^1.10.0",
+    "reflect-metadata": "^0.2.2",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/cookie-parser": "^1.4.6",
+    "@types/jsonwebtoken": "^9.0.5",
+    "@types/morgan": "^1.9.9",
+    "@types/swagger-jsdoc": "^6.0.4",
+    "@types/swagger-ui-express": "^4.1.6",
+    "@typescript-eslint/eslint-plugin": "^6.13.2",
+    "@typescript-eslint/parser": "^6.13.2",
+    "eslint": "^8.55.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.29.0",
+    "firebase-functions-test": "^3.1.0",
+    "module-alias": "^2.2.3",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^4.9.0"
+  },
+  "private": true
+}

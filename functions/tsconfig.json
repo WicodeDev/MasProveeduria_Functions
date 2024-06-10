@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "skipLibCheck": true,
+    "module": "commonjs",
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "outDir": "lib",
+    "sourceMap": true,
+    "strict": true,
+    "target": "es2017",
+    "esModuleInterop": true,
+    "baseUrl": "./src",
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "paths": {
+      "@common/*": ["common/*"],
+      "@controllers/*": ["controllers/*"],
+      "@middlewares/*": ["middlewares/*"],
+      "@routes/*": ["routes/*"],
+      "@services/*": ["services/*"],
+      "@utils/*": ["utils/*"],
+      "@types/*": ["src/types/*"],
+      "@config/*": ["config/*"],
+      "@models/*": ["models/*"],
+      "@schemas/*": ["schemas/*"],
+      "@data/*": ["data/*"],
+      "@swagger/*": ["swagger/*"],
+    }
+  },
+  "compileOnSave": true,
+  "include": [
+    "src"
+  ]
+}
