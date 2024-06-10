@@ -1224,7 +1224,7 @@ export default class FacturasDAL{
                      // TARGETS PARA PST BG PARTE FIJO
                      const targetMobiliarioYEquipo = 'EQUIPO OFICINA PST';
                      const targetAcumDepMob = 'ACUMULADO DEP. MOB. Y EQ. DE OFICINA';
-                     const targetEquipoDeComputo = 'EQUIPO DE COMPUTO PST';
+                    //  const targetEquipoDeComputo = 'EQUIPO DE COMPUTO PST';
                      const targetDepAcumEqComputo = 'DEP. ACUM. EQ. DE COMPUTO';
                      const targetEquipoDeReparto = 'EQUIPO DE REPARTO PST';
                      const targetDepAcumEqReparto = 'DEP. ACUM. DE EQ. DE REPARTO';
@@ -1318,7 +1318,7 @@ export default class FacturasDAL{
                      // INDEX PARA PST BG PARTE FIJO
                      const indexMobiliarioYEquipo = rowValues.findIndex(value => typeof value === 'string' && value.trim() === targetMobiliarioYEquipo.trim());
                      const indexAcumDepMob = rowValues.findIndex(value => typeof value === 'string' && value.trim() === targetAcumDepMob.trim());
-                     const indexEquipoDeComputo = rowValues.findIndex(value => typeof value === 'string' && value.trim() === targetEquipoDeComputo.trim());
+                    //  const indexEquipoDeComputo = rowValues.findIndex(value => typeof value === 'string' && value.trim() === targetEquipoDeComputo.trim());
                      const indexDepAcumEqComputo = rowValues.findIndex(value => typeof value === 'string' && value.trim() === targetDepAcumEqComputo.trim());
                      const indexEquipoDeReparto = rowValues.findIndex(value => typeof value === 'string' && value.trim() === targetEquipoDeReparto.trim());
                      const indexDepAcumEqReparto = rowValues.findIndex(value => typeof value === 'string' && value.trim() === targetDepAcumEqReparto.trim());
