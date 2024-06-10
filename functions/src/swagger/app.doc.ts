@@ -11,6 +11,10 @@ export const swaggerOptions ={
         },
         servers:[
             {
+                url: "https://app-zwrlhqtgqa-uc.a.run.app",
+                description: "Development server"
+            },
+            {
                 url: "http://localhost:5000/masp-cd84a/us-central1/app",
                 description: "Local DEV server"
             },
