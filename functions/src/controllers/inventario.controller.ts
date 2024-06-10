@@ -55,7 +55,7 @@ export const getInventario = asyncHandler(async (req: Request, res: Response) =>
  */
 /**
  * @swagger
- * /inventario/setMinMaxInventario:
+ * /inventario/setMinMaxInventario/{id}/{min}/{max}:
  *   put:
  *     summary: Editar mínimo y máximo inventario
  *     description: Editar el mínimo y el máximo del inventario
@@ -115,7 +115,7 @@ export const editMinMaxInventario = asyncHandler(async (req: Request, res: Respo
  */
 /**
  * @swagger
- * /inventario/setConsumoInventario:
+ * /inventario/setConsumoInventario/{id}/{consumo}:
  *   put:
  *     summary: Editar consumo inventario
  *     description: Editar el consumo del inventario
@@ -168,7 +168,7 @@ export const editConsumoInventario = asyncHandler(async (req: Request, res: Resp
  */
 /**
  * @swagger
- * /inventario/setCantidadInventario:
+ * /inventario/setCantidadInventario/{id}/{cantidad}:
  *   put:
  *     summary: Editar cantidad inventario
  *     description: Editar la cantidad del inventario
@@ -341,7 +341,7 @@ export const getLogsInventario = asyncHandler(async (req: Request, res: Response
  */
 /**
  * @swagger
- * /inventario/getLogsFechaInventario:
+ * /inventario/getLogsFechaInventario/{fechaInicio}/{fechaFin}:
  *   get:
  *     summary: Obtener la lista de los logs del inventario dentro del rango de fechas
  *     description: Obtener la lista de los logs del inventario dentro del rango de fechas
@@ -393,7 +393,7 @@ export const getLogsFechaInventario = asyncHandler(async (req: Request, res: Res
  */
 /**
  * @swagger
- * /inventario/setProveedorInventario:
+ * /inventario/setProveedorInventario/{id}/{proveedor}/{codProveedor}:
  *   put:
  *     summary: Editar proveedor inventario
  *     description: Editar el proveedor del inventario
@@ -452,7 +452,7 @@ export const editProveedorInventario = asyncHandler(async (req: Request, res: Re
  */
 /**
  * @swagger
- * /inventario/setAlertaInventario:
+ * /inventario/setAlertaInventario/{id}/{alerta}:
  *   put:
  *     summary: Editar alerta inventario
  *     description: Editar la alerta del producto

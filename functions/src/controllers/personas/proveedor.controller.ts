@@ -52,7 +52,7 @@ export const getProveedores = asyncHandler(async (req: Request, res: Response) =
  */
 /**
  * @swagger
- * /proveedor/setDiaEntrega:
+ * /proveedor/setDiaEntrega/{id}/{entrega}:
  *   put:
  *     summary: Editar día de entrega del proveedor
  *     description: Editar el día de entrega del proveedor

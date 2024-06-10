@@ -52,7 +52,7 @@ export const getClientes = asyncHandler(async (req: Request, res: Response) => {
  */
 /**
  * @swagger
- * /cliente/setMeta:
+ * /cliente/setMeta/{id}/{meta}:
  *   put:
  *     summary: Editar meta cliente
  *     description: Editar la meta del cliente
@@ -106,7 +106,7 @@ export const editMetaCliente = asyncHandler(async (req: Request, res: Response) 
  */
 /**
  * @swagger
- * /cliente/setClienteAgente:
+ * /cliente/setClienteAgente/{id}/{codAgente}:
  *   put:
  *     summary: Editar agente cliente
  *     description: Editar el agente del cliente
@@ -159,7 +159,7 @@ export const setClienteAgente = asyncHandler(async (req: Request, res: Response)
  */
 /**
  * @swagger
- * /cliente/removeClienteAgente:
+ * /cliente/removeClienteAgente/{id}:
  *   put:
  *     summary: Quitar el agente del cliente
  *     description: Quitar el agente del cliente

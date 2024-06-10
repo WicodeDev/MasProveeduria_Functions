@@ -52,7 +52,7 @@ export const getAgentes = asyncHandler(async (req: Request, res: Response) => {
  */
 /**
  * @swagger
- * /agente/setMeta:
+ * /agente/setMeta/{id}/{meta}:
  *   put:
  *     summary: Editar meta agente
  *     description: Editar la meta global del agente

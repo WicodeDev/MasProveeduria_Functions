@@ -148,7 +148,7 @@ export const deleteSeguimiento = asyncHandler(async (req: Request, res: Response
  */
 /**
  * @swagger
- * /seguimiento/setCantEntSeguimiento:
+ * /seguimiento/setCantEntSeguimiento/{id}/{cantidadEntregada}:
  *   put:
  *     summary: Editar la cantidad entregada del seguimiento
  *     description: Editar la cantidad entregada del seguimiento
@@ -201,7 +201,7 @@ export const editCantEntSeguimiento = asyncHandler(async (req: Request, res: Res
  */
 /**
  * @swagger
- * /seguimiento/setFacturaSeguimiento:
+ * /seguimiento/setFacturaSeguimiento/{id}/{factura}:
  *   put:
  *     summary: Editar la factura del seguimiento
  *     description: Editar la factura del seguimiento
@@ -253,7 +253,7 @@ export const editFacturaSeguimiento = asyncHandler(async (req: Request, res: Res
  */
 /**
  * @swagger
- * /seguimiento/setEstatusOrdenSeguimiento:
+ * /seguimiento/setEstatusOrdenSeguimiento/{id}/{estatusOrden}:
  *   put:
  *     summary: Editar el estatus de la orden del seguimiento
  *     description: Editar el estatus de la orden del seguimiento
@@ -305,7 +305,7 @@ export const editEstatusOrdenSeguimiento = asyncHandler(async (req: Request, res
  */
 /**
  * @swagger
- * /seguimiento/setFolioControlSeguimiento:
+ * /seguimiento/setFolioControlSeguimiento/{id}/{folioControl}:
  *   put:
  *     summary: Editar el folio de control del seguimiento
  *     description: Editar el folio de control del seguimiento

@@ -94,7 +94,7 @@ export const getFacturasAgrupadas = asyncHandler(async (req: Request, res: Respo
  */
 /**
  * @swagger
- * /facturas/{id}/setEtiquetaFactura:
+ * /facturas/setEtiquetaFactura/{id}/{etiqueta}:
  *   put:
  *     summary: Editar la etiqueta de la factura
  *     description: Editar la etiqueta de la factura
@@ -245,73 +245,6 @@ export const getEtiquetas = asyncHandler(async (req: Request, res: Response) => 
  * @param {Response} res . Response of the API
  * @returns {Promise<void>} -Response of the API
  */
-/**
- * @swagger
- * /facturas/uploadExcel:
- *   post:
- *     summary: Cargar datos balanza MASP
- *     description: Cargar datos de la balanza de MASP
- *     tags:
- *       - Facturas
- *     produces:
- *       - application/json
- *     requestBody:
- *       required: true
- *       content:
- *         application/json:
- *           schema:
- *             type: object
- *             properties:
- *               folio:
- *                 type: string
- *                 description: Folio de la base
- *                 example: FFF3
- *               rollos:
- *                 type: number
- *                 description: Número de rollos
- *                 example: 4
- *               cantS:
- *                 type: number
- *                 description: Cantidad solicitada
- *                 example: 3200
- *               cntPR:
- *                 type: number
- *                 description: Cantidad por rollo
- *                 example: 340
- *               proveedor:
- *                 type: string
- *                 description: Proveedor del seguimiento
- *                 example: IMPORTADORA GRATTARSI SA DE CV
- *               codigo:
- *                 type: string
- *                 description: Código del seguimiento
- *                 example: 1237457
- *               material:
- *                 type: string
- *                 description: Material del producto
- *                 example: NOVAFORT
- *               clasificacion:
- *                 type: string
- *                 description: Clasificación del producto
- *                 example: LAM
- *               fechaRecepcion:
- *                 type: string
- *                 description: Fecha de recepción del producto
- *                 example: Thu Apr 20 2023 18:00:00 GMT-0600 (hora estándar central)
- *               validacionEntrada:
- *                 type: string
- *                 description: Validación de entrada
- *                 example: 20
- *     responses:
- *       201:
- *         description: Datos subidos correctamente
- *       400:
- *         description: Error en la solicitud
- *       422:
- *         description: Error en la validación de los datos
- *       500:
- *         description: Error en el servidor desconocido
- */
 export const uploadExcel = asyncHandler(async (req: Request, res: Response) => {
     const response = new ResponseHTTP();
     try {
@@ -332,73 +265,6 @@ export const uploadExcel = asyncHandler(async (req: Request, res: Response) => {
  * @param {Request} req - Request of the API
  * @param {Response} res . Response of the API
  * @returns {Promise<void>} -Response of the API
- */
-/**
- * @swagger
- * /facturas/uploadExcelPST:
- *   post:
- *     summary: Cargar datos balanza PST
- *     description: Cargar datos de la balanza de PST
- *     tags:
- *       - Facturas
- *     produces:
- *       - application/json
- *     requestBody:
- *       required: true
- *       content:
- *         application/json:
- *           schema:
- *             type: object
- *             properties:
- *               folio:
- *                 type: string
- *                 description: Folio de la base
- *                 example: FFF3
- *               rollos:
- *                 type: number
- *                 description: Número de rollos
- *                 example: 4
- *               cantS:
- *                 type: number
- *                 description: Cantidad solicitada
- *                 example: 3200
- *               cntPR:
- *                 type: number
- *                 description: Cantidad por rollo
- *                 example: 340
- *               proveedor:
- *                 type: string
- *                 description: Proveedor del seguimiento
- *                 example: IMPORTADORA GRATTARSI SA DE CV
- *               codigo:
- *                 type: string
- *                 description: Código del seguimiento
- *                 example: 1237457
- *               material:
- *                 type: string
- *                 description: Material del producto
- *                 example: NOVAFORT
- *               clasificacion:
- *                 type: string
- *                 description: Clasificación del producto
- *                 example: LAM
- *               fechaRecepcion:
- *                 type: string
- *                 description: Fecha de recepción del producto
- *                 example: Thu Apr 20 2023 18:00:00 GMT-0600 (hora estándar central)
- *               validacionEntrada:
- *                 type: string
- *                 description: Validación de entrada
- *                 example: 20
- *     responses:
- *       201:
- *         description: Datos subidos correctamente
- *       400:
- *         description: Error en la solicitud
- *       422:
- *         description: Error en la validación de los datos
- *       500:
- *         description: Error en el servidor desconocido
  */
 export const uploadExcelPST = asyncHandler(async (req: Request, res: Response) => {
     const response = new ResponseHTTP();
@@ -421,73 +287,6 @@ export const uploadExcelPST = asyncHandler(async (req: Request, res: Response) =
  * @param {Response} res . Response of the API
  * @returns {Promise<void>} -Response of the API
  */
-/**
- * @swagger
- * /facturas/dataEliminaciones:
- *   post:
- *     summary: Cargar datos eliminaciones
- *     description: Cargar datos de las eliminaciones
- *     tags:
- *       - Facturas
- *     produces:
- *       - application/json
- *     requestBody:
- *       required: true
- *       content:
- *         application/json:
- *           schema:
- *             type: object
- *             properties:
- *               folio:
- *                 type: string
- *                 description: Folio de la base
- *                 example: FFF3
- *               rollos:
- *                 type: number
- *                 description: Número de rollos
- *                 example: 4
- *               cantS:
- *                 type: number
- *                 description: Cantidad solicitada
- *                 example: 3200
- *               cntPR:
- *                 type: number
- *                 description: Cantidad por rollo
- *                 example: 340
- *               proveedor:
- *                 type: string
- *                 description: Proveedor del seguimiento
- *                 example: IMPORTADORA GRATTARSI SA DE CV
- *               codigo:
- *                 type: string
- *                 description: Código del seguimiento
- *                 example: 1237457
- *               material:
- *                 type: string
- *                 description: Material del producto
- *                 example: NOVAFORT
- *               clasificacion:
- *                 type: string
- *                 description: Clasificación del producto
- *                 example: LAM
- *               fechaRecepcion:
- *                 type: string
- *                 description: Fecha de recepción del producto
- *                 example: Thu Apr 20 2023 18:00:00 GMT-0600 (hora estándar central)
- *               validacionEntrada:
- *                 type: string
- *                 description: Validación de entrada
- *                 example: 20
- *     responses:
- *       201:
- *         description: Datos subidos correctamente
- *       400:
- *         description: Error en la solicitud
- *       422:
- *         description: Error en la validación de los datos
- *       500:
- *         description: Error en el servidor desconocido
- */
 export const dataEliminaciones = asyncHandler(async (req: Request, res: Response) => {
     const response = new ResponseHTTP();
     try {
@@ -508,73 +307,6 @@ export const dataEliminaciones = asyncHandler(async (req: Request, res: Response
  * @param {Request} req - Request of the API
  * @param {Response} res . Response of the API
  * @returns {Promise<void>} -Response of the API
- */
-/**
- * @swagger
- * /facturas/dataEtiquetas:
- *   post:
- *     summary: Cargar datos etiquetas
- *     description: Cargar datos de las etiquetas para los reportes
- *     tags:
- *       - Facturas
- *     produces:
- *       - application/json
- *     requestBody:
- *       required: true
- *       content:
- *         application/json:
- *           schema:
- *             type: object
- *             properties:
- *               folio:
- *                 type: string
- *                 description: Folio de la base
- *                 example: FFF3
- *               rollos:
- *                 type: number
- *                 description: Número de rollos
- *                 example: 4
- *               cantS:
- *                 type: number
- *                 description: Cantidad solicitada
- *                 example: 3200
- *               cntPR:
- *                 type: number
- *                 description: Cantidad por rollo
- *                 example: 340
- *               proveedor:
- *                 type: string
- *                 description: Proveedor del seguimiento
- *                 example: IMPORTADORA GRATTARSI SA DE CV
- *               codigo:
- *                 type: string
- *                 description: Código del seguimiento
- *                 example: 1237457
- *               material:
- *                 type: string
- *                 description: Material del producto
- *                 example: NOVAFORT
- *               clasificacion:
- *                 type: string
- *                 description: Clasificación del producto
- *                 example: LAM
- *               fechaRecepcion:
- *                 type: string
- *                 description: Fecha de recepción del producto
- *                 example: Thu Apr 20 2023 18:00:00 GMT-0600 (hora estándar central)
- *               validacionEntrada:
- *                 type: string
- *                 description: Validación de entrada
- *                 example: 20
- *     responses:
- *       201:
- *         description: Datos subidos correctamente
- *       400:
- *         description: Error en la solicitud
- *       422:
- *         description: Error en la validación de los datos
- *       500:
- *         description: Error en el servidor desconocido
  */
 export const dataEtiquetas = asyncHandler(async (req: Request, res: Response) => {
     const response = new ResponseHTTP();
@@ -597,73 +329,6 @@ export const dataEtiquetas = asyncHandler(async (req: Request, res: Response) =>
  * @param {Request} req - Request of the API
  * @param {Response} res . Response of the API
  * @returns {Promise<void>} -Response of the API
- */
-/**
- * @swagger
- * /facturas/dataBG:
- *   post:
- *     summary: Cargar datos datos Balanza General 
- *     description: Cargar datos de la balanza General para los reportes
- *     tags:
- *       - Facturas
- *     produces:
- *       - application/json
- *     requestBody:
- *       required: true
- *       content:
- *         application/json:
- *           schema:
- *             type: object
- *             properties:
- *               folio:
- *                 type: string
- *                 description: Folio de la base
- *                 example: FFF3
- *               rollos:
- *                 type: number
- *                 description: Número de rollos
- *                 example: 4
- *               cantS:
- *                 type: number
- *                 description: Cantidad solicitada
- *                 example: 3200
- *               cntPR:
- *                 type: number
- *                 description: Cantidad por rollo
- *                 example: 340
- *               proveedor:
- *                 type: string
- *                 description: Proveedor del seguimiento
- *                 example: IMPORTADORA GRATTARSI SA DE CV
- *               codigo:
- *                 type: string
- *                 description: Código del seguimiento
- *                 example: 1237457
- *               material:
- *                 type: string
- *                 description: Material del producto
- *                 example: NOVAFORT
- *               clasificacion:
- *                 type: string
- *                 description: Clasificación del producto
- *                 example: LAM
- *               fechaRecepcion:
- *                 type: string
- *                 description: Fecha de recepción del producto
- *                 example: Thu Apr 20 2023 18:00:00 GMT-0600 (hora estándar central)
- *               validacionEntrada:
- *                 type: string
- *                 description: Validación de entrada
- *                 example: 20
- *     responses:
- *       201:
- *         description: Datos subidos correctamente
- *       400:
- *         description: Error en la solicitud
- *       422:
- *         description: Error en la validación de los datos
- *       500:
- *         description: Error en el servidor desconocido
  */
 export const dataBG = asyncHandler(async (req: Request, res: Response) => {
     const response = new ResponseHTTP();

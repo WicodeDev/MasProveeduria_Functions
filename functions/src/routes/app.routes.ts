@@ -68,18 +68,18 @@ inventarioRouter
     .get("/getLogsInventario", getLogsInventario)
     .get("/getLogsFechaInventario/:fechaInicio/:fechaFin", getLogsFechaInventario)
     .put("/setProveedorInventario/:id/:proveedor/:codProveedor", editProveedorInventario)
-    .put("/setAlertaInventario/:id/alerta", editAlertaInventario);
+    .put("/setAlertaInventario/:id/:alerta", editAlertaInventario);
 router.use("/inventario", inventarioRouter);
 
 ordComprasRouter
     .get("/", getOrdCompras)
-    .put("/setAutorizacionOrdCompra", editAutorizacionOrdCompra);
+    .put("/setAutorizacionOrdCompra/:id/:autorizacion", editAutorizacionOrdCompra);
 router.use("/ordCompra", ordComprasRouter);
 
 facturasRouter
     .get("/", getFacturas)
     .get("/getFacturasAgrupdas", getFacturasAgrupadas)
-    .put("/setEtiquetaFactura", editEtiquetaFactura)
+    .put("/setEtiquetaFactura/:id/:etiqueta", editEtiquetaFactura)
     .post("/createEtiquetaFactura", createEtiquetaFactura)
     .get("/getEtiquetas", getEtiquetas)
     .post("/uploadExcel", uploadExcel)

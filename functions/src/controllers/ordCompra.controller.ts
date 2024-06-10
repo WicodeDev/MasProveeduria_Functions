@@ -53,7 +53,7 @@ export const getOrdCompras = asyncHandler(async (req: Request, res: Response) =>
  */
 /**
  * @swagger
- * /ordCompra/setAutorizacionOrdCompra:
+ * /ordCompra/setAutorizacionOrdCompra/{id}/{autorizacion}:
  *   put:
  *     summary: Editar autorización de orden de compra
  *     description: Editar la autorización de la orden de compra
