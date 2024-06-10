@@ -1,0 +1,38 @@
+on:
+    push:
+      branches:
+        - dev
+
+name: Deploy to Firebase
+jobs:
+  buildFirebase:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '18.x'
+
+      - name: 'Authenticate to Google Cloud'
+        uses: 'google-github-actions/auth@v0'
+        with:
+          credentials_json: ${{ secrets.GCP_CREDENTIALS }}
+
+      - name: 'Set up Cloud SDK'
+        uses: google-github-actions/setup-gcloud@v2
+
+      - name: Create .env file
+        run: gcloud secrets versions access latest --secret=Secret-Back-MASP > functions/.env
+
+      - name: Install dependencies
+        run: cd functions && yarn install && cd ..
+
+      - name: Install firebase tools
+        run: yarn global add firebase-tools
+        
+      - name: Deploy to Firebase
+        run: yarn deploy:dev
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
