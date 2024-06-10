@@ -90,7 +90,7 @@ facturasRouter
     .post("/createLogReporte", createLogReporte)
     .get("/datosReporteEstadoFlujoEfectivo", datosReporteEstadoFlujoEfectivo)
     .get("/getLogsReporte", getLogsReportes)
-    .put("/setEtiquetaCliente", editEtiquetaCliente)
+    .put("/setEtiquetaCliente/:id/:etiqueta", editEtiquetaCliente)
     .post("/createEtiquetaCliente", createEtiquetaCliente)
     .get("/getEtiquetasCliente", getEtiquetasCliente);
 router.use("/facturas", facturasRouter);

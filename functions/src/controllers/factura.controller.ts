@@ -520,7 +520,7 @@ export const getLogsReportes = asyncHandler(async (req: Request, res: Response) 
  */
 /**
  * @swagger
- * /facturas/setEtiquetaCliente:
+ * /facturas/setEtiquetaCliente/{id}/{etiqueta}:
  *   put:
  *     summary: Editar la etiqueta cliente del cliente
  *     description: Editar la etiqueta cliente del cliente para los reportes
