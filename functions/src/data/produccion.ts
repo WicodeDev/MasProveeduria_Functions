@@ -45,18 +45,29 @@ export default class ProduccionDAL {
 
     /**
      * UPDATE hora inicio y hora termino Produccion
-     * @Params id Produccion id
+     * @Params id produccion id
+     * @Params uuid orden uuid
      * @Params hora inicio to asign
      * @Params hora termino to asign
      * @returns Produccion edit
      */
-    static async updateHoraProduccion(produccion: Produccion): Promise<Produccion>{
+    static async updateHoraProduccion(id: string, uuid: string, horaInicio: string, horaFin: string): Promise<Produccion>{
         try {
             const produccionRepo = getRepository(Produccion);
-            const produccionEdit = await produccionRepo.update(produccion);
+            const produccionEdit = await produccionRepo.findById(id);
             if(!produccionEdit){
-                throw new ErrorResponse(`No se encontro ninguna produccion con el id: ${produccion.id} `, 204);
+                throw new ErrorResponse(`No se encontro ninguna produccion con el id: ${id} `, 204);
             }
+            const ordenEdit = produccionEdit.ordenes.find(orden => orden.uuid === uuid);
+            if(!ordenEdit){
+                throw new ErrorResponse(`No se encontro ninguna orden de producción con el uuid: ${uuid} `, 204);
+            }
+            produccionEdit.ordenes.map(orden => {
+                if(orden.uuid === uuid){
+                    orden.horaInicio = horaInicio;
+                    orden.horaTermino = horaFin;
+                }
+            });
             return produccionEdit;
         } catch (error) {
             const errorResponse = error as ErrorResponse;

@@ -86,6 +86,10 @@ export const getProduccion = asyncHandler(async (req: Request, res: Response) =>
  *                 items:
  *                   type: object
  *                   properties:
+ *                     uuid:
+ *                       type: string
+ *                       description: uuid de la orden
+ *                       example: abcd123
  *                     rollos:
  *                       type: number
  *                       description: Número de rollos
@@ -167,8 +171,8 @@ export const createProduccion = asyncHandler(async (req: Request, res: Response)
  * @swagger
  * /produccion/updateHoraProduccion:
  *   put:
- *     summary: Editar hora inicio y hora termino de órdenes de producción
- *     description: Editar las hora inicio y hora termino en las órdenes de producción
+ *     summary: Editar hora inicio y hora término de órdenes de producción
+ *     description: Editar la hora de inicio y hora de término en las órdenes de producción
  *     tags:
  *       - Producción
  *     requestBody:
@@ -181,36 +185,25 @@ export const createProduccion = asyncHandler(async (req: Request, res: Response)
  *             properties:
  *               id:
  *                 type: string
- *                 description: ID de la base
+ *                 description: ID de la producción
  *                 example: "123"
- *               numProduccion:
- *                 type: number
- *                 description: Número de producción
- *                 example: 456
- *               nombreCliente:
+ *               uuid:
  *                 type: string
- *                 description: Nombre del cliente
- *                 example: "Cliente XYZ"
- *               fechaCreacion:
+ *                 description: UUID de la orden de producción
+ *                 example: "456"
+ *               horaInicio:
  *                 type: string
- *                 description: Fecha de la creación de la orden de producción
- *                 example: "2023-06-01"
- *               ordenes:
- *                 type: array
- *                 items:
- *                   type: object
- *                   properties:
- *                     horaInicio:
- *                       type: string
- *                       description: Hora de inicio en formato HH:mm
- *                       example: "08:00"
- *                     horaTermino:
- *                       type: string
- *                       description: Hora de término en formato HH:mm
- *                       example: "17:00"
+ *                 format: time
+ *                 description: Hora de inicio de la producción
+ *                 example: "09:00"
+ *               horaFin:
+ *                 type: string
+ *                 format: time
+ *                 description: Hora de fin de la producción
+ *                 example: "11:00"
  *     responses:
- *       201:
- *         description: Producción actualizada correctamente
+ *       200:
+ *         description: Orden actualizada correctamente
  *       204:
  *         description: No se encontró la producción
  *       400:
@@ -221,15 +214,8 @@ export const createProduccion = asyncHandler(async (req: Request, res: Response)
 export const updateHoraProduccion = asyncHandler(async (req: Request, res: Response) => {
     const response = new ResponseHTTP();
     try {
-        const prod = {
-            ...req.body,
-            ordenes: req.body.ordenes.map((orden: any) => ({
-                ...orden,
-                horaInicio: orden.horaInicio,
-                horaTermino: orden.horaTermino,
-            })),
-        };
-        const produccion = await ProduccionDAL.updateHoraProduccion(prod);
+        const { id, uuid, horaInicio, horaFin} = req.body;
+        const produccion = await ProduccionDAL.updateHoraProduccion(id, uuid, horaInicio, horaFin);
         response.setSend(StatusCodes.OK, "Produccion editada correctamente", produccion);
         response.send(res);
     } catch (error) {

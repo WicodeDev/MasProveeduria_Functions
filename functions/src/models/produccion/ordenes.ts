@@ -37,6 +37,9 @@ class Ordenes{
     @IsOptional()
     @IsString()
     horaTermino!: string;
+    @IsNotEmpty()
+    @IsString()
+    uuid!: string;
 }
 
 export default Ordenes;
