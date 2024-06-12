@@ -10,6 +10,7 @@ import { Router } from "express";
 import swaggerJSDoc from "swagger-jsdoc";
 import swaggerUI from "swagger-ui-express";
 import { swaggerOptions } from "@swagger/app.doc";
+import { createProduccion, getProduccion, updateHoraProduccion } from "@controllers/produccion.controller";
 
 const swaggerDoc = swaggerJSDoc(swaggerOptions);
 
@@ -22,6 +23,7 @@ const seguimientoRouter = Router();
 const inventarioRouter = Router();
 const ordComprasRouter = Router();
 const facturasRouter = Router();
+const produccionRouter = Router();
 
 agenteRouter
     .get("/", getAgentes)
@@ -94,6 +96,12 @@ facturasRouter
     .post("/createEtiquetaCliente", createEtiquetaCliente)
     .get("/getEtiquetasCliente", getEtiquetasCliente);
 router.use("/facturas", facturasRouter);
+
+produccionRouter
+    .get("/", getProduccion)
+    .post("/createProduccion", createProduccion)
+    .put("/updateHoraProduccion", updateHoraProduccion);
+router.use("/produccion", produccionRouter);
 
 router.use("/", swaggerUI.serve, swaggerUI.setup(swaggerDoc));
 
