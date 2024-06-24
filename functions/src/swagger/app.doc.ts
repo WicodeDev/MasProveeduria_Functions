@@ -30,5 +30,6 @@ export const swaggerOptions ={
         "./src/controllers/inventario.controller.ts",
         "./src/controllers/ordCompra.controller.ts",
         "./src/controllers/factura.controller.ts",
+        "./src/controllers/produccion.controller.ts",
     ]
 }
