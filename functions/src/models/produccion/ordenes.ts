@@ -27,6 +27,12 @@ class Ordenes{
     adhesivo!: string;
     @IsNotEmpty()
     @IsString()
+    refuerzo2!: string;
+    @IsNotEmpty()
+    @IsString()
+    adhesivo2!: string;
+    @IsNotEmpty()
+    @IsString()
     tipo!: string;
     @IsNotEmpty()
     @IsString()

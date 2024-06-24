@@ -88,7 +88,7 @@ export const getProduccion = asyncHandler(async (req: Request, res: Response) =>
  *                   properties:
  *                     uuid:
  *                       type: string
- *                       description: uuid de la orden
+ *                       description: UUID de la orden
  *                       example: abcd123
  *                     rollos:
  *                       type: number
@@ -146,8 +146,11 @@ export const createProduccion = asyncHandler(async (req: Request, res: Response)
                 fechaEntrega: orden.fechaEntrega,
                 refuerzo: orden.refuerzo,
                 adhesivo: orden.adhesivo,
+                refuerzo2: orden.refuerzo2,
+                adhesivo2: orden.adhesivo2,
                 tipo: orden.tipo,
                 estatus: orden.estatus,
+                uuid: orden.uuid
             })),
         } as Produccion;
         const newProduccion = await ProduccionDAL.createProduccion(prod);

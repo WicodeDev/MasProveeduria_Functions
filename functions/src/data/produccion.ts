@@ -68,6 +68,7 @@ export default class ProduccionDAL {
                     orden.horaTermino = horaFin;
                 }
             });
+            await produccionRepo.update(produccionEdit);
             return produccionEdit;
         } catch (error) {
             const errorResponse = error as ErrorResponse;
